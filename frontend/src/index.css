@@ -1,0 +1,330 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface text-slate-800 antialiased;
+    min-height: 100vh;
+  }
+
+  select option {
+    @apply bg-white text-slate-900;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply min-h-screen bg-page-mesh;
+  }
+
+  .page-content {
+    @apply animate-fade-up;
+  }
+
+  .card {
+    @apply rounded-2xl border border-slate-200/70 bg-white shadow-card;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-300 hover:-translate-y-0.5 hover:border-slate-300/80 hover:shadow-elevated;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-navy-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-navy-850 hover:shadow-md active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent-gradient px-5 py-2.5 text-sm font-semibold text-white shadow-glow transition-all duration-200 hover:brightness-110 hover:shadow-lg active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 transition-all duration-200 hover:border-slate-300 hover:bg-slate-50 hover:shadow-sm;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-red-200/80 bg-red-50 px-4 py-2 text-sm font-medium text-red-600 transition-all hover:bg-red-100 hover:border-red-300;
+  }
+
+  .icon-btn {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 transition-all duration-200 hover:border-slate-300 hover:bg-slate-50 hover:text-navy-900 hover:shadow-sm;
+  }
+
+  .icon-btn-danger {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-xl border border-red-100 bg-red-50 text-red-500 transition-all duration-200 hover:border-red-200 hover:bg-red-100 hover:text-red-700;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all duration-200 focus:border-accent focus:ring-4 focus:ring-accent/10;
+  }
+
+  .search-box {
+    @apply relative flex-1;
+  }
+
+  .search-box input {
+    @apply input-field pl-11 shadow-inner-soft bg-slate-50/50 focus:bg-white;
+  }
+
+  .select-field {
+    @apply w-full cursor-pointer appearance-none rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-900 outline-none transition-all duration-200 focus:border-accent focus:ring-4 focus:ring-accent/10;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%230d9488' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    padding-right: 2.5rem;
+  }
+
+  .label-text {
+    @apply mb-1.5 block text-sm font-semibold text-slate-700;
+  }
+
+  .auth-card {
+    @apply rounded-2xl border border-slate-200/80 bg-white p-8 shadow-elevated lg:p-10;
+  }
+
+  .auth-input {
+    @apply w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 outline-none transition-all duration-200 focus:border-accent focus:bg-white focus:ring-4 focus:ring-accent/10;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ring-inset;
+  }
+
+  .badge-success {
+    @apply badge bg-emerald-50 text-emerald-700 ring-emerald-200/60;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-50 text-amber-700 ring-amber-200/60;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-50 text-red-700 ring-red-200/60;
+  }
+
+  .table-head {
+    @apply border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white text-xs font-bold uppercase tracking-wider text-slate-500;
+  }
+
+  .table-row {
+    @apply border-b border-slate-100 transition-colors duration-150 last:border-0 hover:bg-teal-50/30;
+  }
+
+  .stat-card {
+    @apply card-hover relative overflow-hidden p-6;
+  }
+
+  .stat-icon {
+    @apply flex h-12 w-12 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-110;
+  }
+
+  .toolbar {
+    @apply card mb-6 flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between;
+  }
+
+  .spinner {
+    @apply h-10 w-10 animate-spin rounded-full border-2 border-slate-200 border-t-accent;
+  }
+
+  .modal-accent-bar {
+    @apply absolute inset-x-0 top-0 h-1 bg-accent-gradient;
+  }
+
+  /* Invoice modal — screen preview */
+  .invoice-modal-root {
+    @apply fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6;
+  }
+
+  .invoice-modal-overlay {
+    @apply absolute inset-0 bg-navy-950/60 backdrop-blur-sm;
+  }
+
+  .invoice-modal-panel {
+    @apply relative flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-elevated;
+  }
+
+  .invoice-modal-toolbar {
+    @apply flex shrink-0 items-center justify-between border-b border-slate-200 bg-white px-5 py-3;
+  }
+
+  .invoice-document {
+    @apply m-4 overflow-y-auto rounded-xl border border-slate-200 bg-white p-8 shadow-sm sm:p-10;
+  }
+
+  .invoice-header {
+    @apply mb-8 flex flex-col gap-6 border-b-2 border-navy-900 pb-6 sm:flex-row sm:items-end sm:justify-between;
+  }
+
+  .invoice-brand {
+    @apply flex items-center gap-4;
+  }
+
+  .invoice-logo {
+    @apply flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-navy-900;
+  }
+
+  .invoice-company-name {
+    @apply font-display text-2xl font-bold tracking-tight text-navy-900;
+  }
+
+  .invoice-company-tagline {
+    @apply mt-0.5 text-sm text-slate-500;
+  }
+
+  .invoice-title-block {
+    @apply sm:text-right;
+  }
+
+  .invoice-title {
+    @apply text-xs font-bold tracking-[0.2em] text-accent;
+  }
+
+  .invoice-number {
+    @apply mt-1 font-mono text-xl font-bold text-navy-900;
+  }
+
+  .invoice-meta-grid {
+    @apply mb-8 grid gap-4 sm:grid-cols-2;
+  }
+
+  .invoice-meta-box {
+    @apply rounded-lg border border-slate-200 bg-slate-50 p-4;
+  }
+
+  .invoice-meta-box-right {
+    @apply bg-white;
+  }
+
+  .invoice-meta-label {
+    @apply text-[11px] font-bold uppercase tracking-wider text-slate-500;
+  }
+
+  .invoice-meta-value {
+    @apply mt-2 text-base font-semibold text-navy-900;
+  }
+
+  .invoice-meta-sub {
+    @apply text-sm text-slate-600;
+  }
+
+  .invoice-meta-row {
+    @apply flex items-center justify-between border-b border-slate-100 py-2 last:border-0;
+  }
+
+  .invoice-meta-value-sm {
+    @apply text-sm font-semibold text-navy-900;
+  }
+
+  .invoice-table {
+    @apply mb-8 w-full border-collapse text-sm;
+  }
+
+  .invoice-table thead tr {
+    @apply border-b-2 border-navy-900 bg-slate-50;
+  }
+
+  .invoice-table th {
+    @apply px-3 py-3 text-left text-[11px] font-bold uppercase tracking-wider text-slate-600;
+  }
+
+  .invoice-table td {
+    @apply border-b border-slate-100 px-3 py-3 align-top;
+  }
+
+  .invoice-table tbody tr:last-child td {
+    @apply border-b-0;
+  }
+
+  .invoice-summary {
+    @apply flex justify-end;
+  }
+
+  .invoice-summary-box {
+    @apply w-full max-w-sm rounded-lg border border-slate-200 overflow-hidden;
+  }
+
+  .invoice-summary-row {
+    @apply flex items-center justify-between px-4 py-3 text-sm text-slate-700;
+  }
+
+  .invoice-summary-total {
+    @apply border-t border-slate-200 bg-navy-900 text-base font-bold text-white;
+  }
+
+  .invoice-footer {
+    @apply mt-10 border-t border-slate-200 pt-6 text-center;
+  }
+
+  .invoice-footer-note {
+    @apply text-xs leading-relaxed text-slate-500;
+  }
+
+  .invoice-footer-brand {
+    @apply mt-2 text-[11px] font-semibold uppercase tracking-wider text-slate-400;
+  }
+}
+
+/* Print — invoice only, hide app chrome */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  body.printing-invoice * {
+    visibility: hidden !important;
+  }
+
+  body.printing-invoice #invoice-print-root,
+  body.printing-invoice #invoice-print-root * {
+    visibility: visible !important;
+  }
+
+  body.printing-invoice #invoice-print-root {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999999 !important;
+    display: block !important;
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  body.printing-invoice .invoice-modal-overlay,
+  body.printing-invoice .invoice-modal-toolbar {
+    display: none !important;
+  }
+
+  body.printing-invoice .invoice-modal-panel {
+    max-height: none !important;
+    max-width: none !important;
+    width: 100% !important;
+    height: auto !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: white !important;
+    overflow: visible !important;
+  }
+
+  body.printing-invoice .invoice-document {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  body.printing-invoice .invoice-summary-total {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body.printing-invoice .invoice-logo {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
