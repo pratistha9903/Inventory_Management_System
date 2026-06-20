@@ -203,6 +203,8 @@ Do **not** commit `.env` (secrets).
 
 ### Step 2 — Backend + Database (Render recommended)
 
+> **Important:** Render defaults to Python 3.14, which breaks `pydantic-core` builds. This repo pins **Python 3.12.8** via `backend/.python-version`. If deploy still fails, set **Environment → PYTHON_VERSION = 3.12.8** in the Render dashboard.
+
 1. Create a **PostgreSQL** instance on [Render](https://render.com)
 2. Create a **Web Service** connected to your GitHub repo
 3. Set **Root Directory** to `backend`
@@ -334,6 +336,7 @@ PostgreSQL (port 5432)
 | Schema / column errors | `docker compose down -v` then `docker compose up --build` |
 | Frontend can't reach API | Check `VITE_API_URL` and rebuild frontend |
 | CORS errors on live site | Add frontend URL to backend `CORS_ORIGINS` |
+| Render build fails on `pydantic-core` | Pin Python **3.12.8** (`backend/.python-version` or env `PYTHON_VERSION=3.12.8`) |
 | Customer can't place order | Sign up/log in as **Customer** (not Admin) |
 | Delete product/customer fails | Item is linked to existing orders — expected behavior |
 
