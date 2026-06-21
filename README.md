@@ -6,7 +6,7 @@ Production-ready **Inventory & Order Management System** — full-stack technica
 
 | Service | URL |
 |---------|-----|
-| Frontend | [ Versel Link](https://inventory-management-system-alpha-jade.vercel.app) |
+| Frontend | [ Vercel Link](https://inventory-management-system-alpha-jade.vercel.app) |
 | Backend API | [Render Link](https://inventory-management-system-gitn.onrender.com) |
 | API Docs | [Link](https://inventory-management-system-gitn.onrender.com/docs)|
 
