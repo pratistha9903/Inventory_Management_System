@@ -10,6 +10,11 @@ Production-ready **Inventory & Order Management System** — full-stack technica
 | Backend API | [Render Link](https://inventory-management-system-gitn.onrender.com) |
 | API Docs | [Link](https://inventory-management-system-gitn.onrender.com/docs)|
 
+
+## Demo Video
+
+https://github.com/user-attachments/assets/1ab9519c-f144-46d5-8f1e-d0c8d7ef83cc
+
 ## Tech Stack
 
 | Layer | Technology |
@@ -339,6 +344,10 @@ PostgreSQL (port 5432)
 | Render build fails on `pydantic-core` | Pin Python **3.12.8** (`backend/.python-version` or env `PYTHON_VERSION=3.12.8`) |
 | Customer can't place order | Sign up/log in as **Customer** (not Admin) |
 | Delete product/customer fails | Item is linked to existing orders — expected behavior |
+
+## Docker Link
+
+https://hub.docker.com/repository/docker/pratistha9903/inventory-pro-backend/general
 
 ## License
 
