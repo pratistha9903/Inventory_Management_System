@@ -6,7 +6,7 @@ Production-ready **Inventory & Order Management System** — full-stack technica
 
 | Service | URL |
 |---------|-----|
-| Frontend | _Add your Vercel/Netlify URL here_ |
+| Frontend | _inventory-management-system-alpha-jade.vercel.app_ |
 | Backend API | _Add your Render/Railway URL here_ |
 | API Docs | _https://your-backend.onrender.com/docs_ |
 
