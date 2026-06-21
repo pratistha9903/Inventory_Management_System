@@ -2,7 +2,7 @@
 
 Production-ready **Inventory & Order Management System** — full-stack technical assessment project with JWT authentication, role-based access, order workflows, invoices, and Docker deployment.
 
-## Live Demo
+## Live Link
 
 | Service | URL |
 |---------|-----|
